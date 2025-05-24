@@ -107,7 +107,7 @@ const Login = () => {
         return;
       }
 
-      const res = await fetch(`/api/auth/login`, {
+      const res = await fetch(`https://chatify-backend-service.onrender.com/api/auth/login`, {
         method: "POST",
         credentials:'include',
         headers: { "Content-Type": "application/json" },
