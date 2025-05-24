@@ -130,9 +130,10 @@ const Signup = () => {
     }));
   };
 
+  const apiUrl = process.env.REACT_APP_API_URL;
   const signUpUser = async () => {
     try {
-      const res = await fetch(`${REACT_APP_API_URL}/api/auth/signup`, {
+      const res = await fetch(`${apiUrl}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
