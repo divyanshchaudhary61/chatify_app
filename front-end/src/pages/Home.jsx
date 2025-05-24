@@ -242,8 +242,9 @@ const Home = () => {
     // get all users after login
     const getUsers = async () => {
 
+      const apiUrl = process.env.REACT_APP_API_URL;
       try {
-        const res = await fetch(`/api/users`, {
+        const res = await fetch(`${apiUrl}/api/users`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ "user": authUser._id })
