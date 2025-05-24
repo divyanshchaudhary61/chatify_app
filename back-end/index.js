@@ -10,11 +10,11 @@ require('dotenv').config();
 // app.use(cors());
 
 app.use(cors({
-    origin: 'http://chatify-app-eight.vercel.app/',  
+    origin: 'https://chatify-app-eight.vercel.app/',  
     credentials: true, 
   }));
 
-  
+
 const authRoutes = require("./routes/auth.routes");
 const messageRoutes = require("./routes/message.routes");
 const usersRoutes = require("./routes/users.routes");
