@@ -244,7 +244,7 @@ const Home = () => {
 
       const apiUrl = process.env.REACT_APP_API_URL;
       try {
-        const res = await fetch(`/api/users`, {
+        const res = await fetch(`https://chatify-backend-service.onrender.com/api/users`, {
           method: "POST",
           credentials: 'include',
           headers: { "Content-Type": "application/json" },
@@ -295,7 +295,7 @@ const Home = () => {
 
     try {
       setLoading(true)
-      const res = await fetch(`/api/auth/logout`)
+      const res = await fetch(`https://chatify-backend-service.onrender.com/api/auth/logout`)
 
       if (!res.ok) {
         const errorText = await res.text();
@@ -329,7 +329,7 @@ const Home = () => {
     const getUserMessages = async () => {
       try {
         setLoading(true)
-        const res = await fetch(`/api/messages/${user._id}`, {
+        const res = await fetch(`https://chatify-backend-service.onrender.com/api/messages/${user._id}`, {
           method: "POST",
           credentials:'include',
           headers: { "Content-Type": "application/json" },
@@ -370,7 +370,7 @@ const Home = () => {
       const sendMessage = async () => {
 
         try {
-          const res = await fetch(`/api/messages/send/${selectedUser._id}`, {
+          const res = await fetch(`https://chatify-backend-service.onrender.com/api/messages/send/${selectedUser._id}`, {
             method: "POST",
             credentials:'include',
             headers: { "Content-Type": "application/json" },
