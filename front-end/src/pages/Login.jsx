@@ -110,6 +110,7 @@ const Login = () => {
       const apiUrl = process.env.REACT_APP_API_URL;
       const res = await fetch(`${apiUrl}/api/auth/login`, {
         method: "POST",
+        credentials:'include',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });

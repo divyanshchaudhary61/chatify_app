@@ -7,8 +7,14 @@ const cookieParser = require("cookie-parser")
 require('dotenv').config();
 
 // Use cors middleware
-app.use(cors());
+// app.use(cors());
 
+app.use(cors({
+    origin: 'http://chatify-app-eight.vercel.app/',  
+    credentials: true, 
+  }));
+
+  
 const authRoutes = require("./routes/auth.routes");
 const messageRoutes = require("./routes/message.routes");
 const usersRoutes = require("./routes/users.routes");

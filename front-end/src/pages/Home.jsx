@@ -246,6 +246,7 @@ const Home = () => {
       try {
         const res = await fetch(`${apiUrl}/api/users`, {
           method: "POST",
+          credentials: 'include',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ "user": authUser._id })
         })
@@ -330,6 +331,7 @@ const Home = () => {
         setLoading(true)
         const res = await fetch(`/api/messages/${user._id}`, {
           method: "POST",
+          credentials:'include',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ "userId": authUser._id })
         })
@@ -370,6 +372,7 @@ const Home = () => {
         try {
           const res = await fetch(`/api/messages/send/${selectedUser._id}`, {
             method: "POST",
+            credentials:'include',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ "message": sendMessageData, "senderId": authUser._id })
           })
