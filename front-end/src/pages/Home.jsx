@@ -244,7 +244,7 @@ const Home = () => {
 
       const apiUrl = process.env.REACT_APP_API_URL;
       try {
-        const res = await fetch(`${apiUrl}/api/users`, {
+        const res = await fetch(`/api/users`, {
           method: "POST",
           credentials: 'include',
           headers: { "Content-Type": "application/json" },
